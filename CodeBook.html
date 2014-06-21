@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>CodeBook</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>CodeBook</h1>
+
+<p>The document lists variables used within cleaned up data</p>
+
+<p>1       tBodyAcc-mean()-X           double</p>
+
+<p>2   tBodyAcc-mean()-Y           double</p>
+
+<p>3   tBodyAcc-mean()-Z           double</p>
+
+<p>4   tBodyAcc-std()-X            double</p>
+
+<p>5   tBodyAcc-std()-Y            double</p>
+
+<p>6   tBodyAcc-std()-Z            double</p>
+
+<p>7   tGravityAcc-mean()-X            double</p>
+
+<p>8   tGravityAcc-mean()-Y            double</p>
+
+<p>9   tGravityAcc-mean()-Z            double</p>
+
+<p>10  tGravityAcc-std()-X         double</p>
+
+<p>11  tGravityAcc-std()-Y         double</p>
+
+<p>12  tGravityAcc-std()-Z         double</p>
+
+<p>13  tBodyAccJerk-mean()-X           double</p>
+
+<p>14  tBodyAccJerk-mean()-Y           double</p>
+
+<p>15  tBodyAccJerk-mean()-Z           double</p>
+
+<p>16  tBodyAccJerk-std()-X            double</p>
+
+<p>17  tBodyAccJerk-std()-Y            double</p>
+
+<p>18  tBodyAccJerk-std()-Z            double</p>
+
+<p>19  tBodyGyro-mean()-X          double</p>
+
+<p>20  tBodyGyro-mean()-Y          double</p>
+
+<p>21  tBodyGyro-mean()-Z          double</p>
+
+<p>22  tBodyGyro-std()-X           double</p>
+
+<p>23  tBodyGyro-std()-Y           double</p>
+
+<p>24  tBodyGyro-std()-Z           double</p>
+
+<p>25  tBodyGyroJerk-mean()-X          double</p>
+
+<p>26  tBodyGyroJerk-mean()-Y          double</p>
+
+<p>27  tBodyGyroJerk-mean()-Z          double</p>
+
+<p>28  tBodyGyroJerk-std()-X           double</p>
+
+<p>29  tBodyGyroJerk-std()-Y           double</p>
+
+<p>30  tBodyGyroJerk-std()-Z           double</p>
+
+<p>31  tBodyAccMag-mean()          double</p>
+
+<p>32  tBodyAccMag-std()           double</p>
+
+<p>33  tGravityAccMag-mean()           double</p>
+
+<p>34  tGravityAccMag-std()            double</p>
+
+<p>35  tBodyAccJerkMag-mean()          double</p>
+
+<p>36  tBodyAccJerkMag-std()           double</p>
+
+<p>37  tBodyGyroMag-mean()         double</p>
+
+<p>38  tBodyGyroMag-std()          double</p>
+
+<p>39  tBodyGyroJerkMag-mean()         double</p>
+
+<p>40  tBodyGyroJerkMag-std()          double</p>
+
+<p>41  fBodyAcc-mean()-X           double</p>
+
+<p>42  fBodyAcc-mean()-Y           double</p>
+
+<p>43  fBodyAcc-mean()-Z           double</p>
+
+<p>44  fBodyAcc-std()-X            double</p>
+
+<p>45  fBodyAcc-std()-Y            double</p>
+
+<p>46  fBodyAcc-std()-Z            double</p>
+
+<p>47  fBodyAcc-meanFreq()-X           double</p>
+
+<p>48  fBodyAcc-meanFreq()-Y           double</p>
+
+<p>49  fBodyAcc-meanFreq()-Z           double</p>
+
+<p>50  fBodyAccJerk-mean()-X           double</p>
+
+<p>51  fBodyAccJerk-mean()-Y           double</p>
+
+<p>52  fBodyAccJerk-mean()-Z           double</p>
+
+<p>53  fBodyAccJerk-std()-X            double</p>
+
+<p>54  fBodyAccJerk-std()-Y            double</p>
+
+<p>55  fBodyAccJerk-std()-Z            double</p>
+
+<p>56  fBodyAccJerk-meanFreq()-X   double</p>
+
+<p>57  fBodyAccJerk-meanFreq()-Y   double</p>
+
+<p>58  fBodyAccJerk-meanFreq()-Z   double</p>
+
+<p>59  fBodyGyro-mean()-X          double</p>
+
+<p>60  fBodyGyro-mean()-Y          double</p>
+
+<p>61  fBodyGyro-mean()-Z          double</p>
+
+<p>62  fBodyGyro-std()-X           double</p>
+
+<p>63  fBodyGyro-std()-Y           double</p>
+
+<p>64  fBodyGyro-std()-Z           double</p>
+
+<p>65  fBodyGyro-meanFreq()-X          double</p>
+
+<p>66  fBodyGyro-meanFreq()-Y          double</p>
+
+<p>67  fBodyGyro-meanFreq()-Z          double</p>
+
+<p>68  fBodyAccMag-mean()          double</p>
+
+<p>69  fBodyAccMag-std()           double</p>
+
+<p>70  fBodyAccMag-meanFreq()          double</p>
+
+<p>71  fBodyBodyAccJerkMag-mean()  double</p>
+
+<p>72  fBodyBodyAccJerkMag-std()   double</p>
+
+<p>73  fBodyBodyAccJerkMag-meanFreq()  double</p>
+
+<p>74  fBodyBodyGyroMag-mean()         double</p>
+
+<p>75  fBodyBodyGyroMag-std()          double</p>
+
+<p>76  fBodyBodyGyroMag-meanFreq() double</p>
+
+<p>77  fBodyBodyGyroJerkMag-mean() double</p>
+
+<p>78  fBodyBodyGyroJerkMag-std()  double</p>
+
+<p>79  fBodyBodyGyroJerkMag-meanFreq() double</p>
+
+<p>80  activity                    activity code</p>
+
+<pre><code>    1       WALKING
+    2   WALKING_UPSTAIRS
+    3   WALKING_DOWNSTAIRS
+    4   SITTING
+    5       STANDING
+    6   LAYING
+</code></pre>
+
+<p>81  subject                         integer</p>
+
+</body>
+
+</html>
+

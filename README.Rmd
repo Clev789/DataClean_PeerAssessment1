@@ -1,0 +1,111 @@
+Getting and Cleaning Data: Peer Assessment 1
+========================================================
+
+The document describes the steps performed in order to download, reformat and clean the data collected from the accelerometers from the Samsung Galaxy S smartphone
+
+## Merging training set and data set to create one data set
+
+The data was provided from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+Firstly, the script assumes that the data is located in working directory:
+```{r}
+temp <- paste(getwd(),"/getdata_projectfiles_UCI HAR Dataset.zip", sep="")
+```
+
+After this there are multiple files within the zip archive. As the data is split between the train and test - the script below extracts those separate files and merges them.
+
+Exraction code
+
+```{r}
+              
+## Read train data set
+traindata <- read.table(unz(temp, "UCI HAR Dataset/train/X_train.txt"))
+traindataact <- read.table(unz(temp, "UCI HAR Dataset/train/y_train.txt"))
+trainsubj <- read.table(unz(temp, "UCI HAR Dataset/train/subject_train.txt"))
+
+traindata <- cbind(traindata, traindataact, trainsubj)
+
+## Read test data set
+testdata <- read.table(unz(temp, "UCI HAR Dataset/test/X_test.txt"))
+testdataact <- read.table(unz(temp, "UCI HAR Dataset/test/y_test.txt"))
+testsubj<- read.table(unz(temp, "UCI HAR Dataset/test/subject_test.txt"))
+
+testdata <- cbind(testdata, testdataact, testsubj)
+```
+
+Merging data
+
+```{r}
+dataset <- rbind(traindata, testdata)
+```
+
+## Extract only the measurements on the mean and standard deviation for each measurement.
+
+The following approach was selected for extracting only mean and standard deviation - all variables that have within their naming convention either "mean" or "std" were extracted
+
+Firstly, fields names were fed into separate data set
+```{r}
+Varnames <- read.table(unz(temp, "UCI HAR Dataset/features.txt"))
+```
+
+After this the field names were added to the previously merged data:
+
+```{r}
+colnames(dataset) <- Varnames$V2
+names(dataset)[562] <- "activity"
+names(dataset)[563] <- "subject"
+```
+
+A search was run across names if they cointained either "mean" or "std"
+
+```{r}
+reqcol <- c("mean", "std")
+vars <- grep(paste(reqcol, collapse="|"), Varnames$V2)
+vars <- c(vars, 562, 563)
+```
+
+Relevant columns were selected from the data set
+
+```{r}
+datasetfilt <- dataset[, vars]
+```
+
+## Use descriptive activity names to name the activities in the data set
+
+The activity labels were separately stored in the activity_labels file.
+The file was uploaded and the labels were attached to the existing activity variable:
+
+
+```{r}
+label <- read.table(unz(temp, "UCI HAR Dataset/activity_labels.txt"))
+datasetfilt$activity <- factor(datasetfilt$activity, labels = label$V2, 
+                               levels = sort(unique(datasetfilt$activity)))
+```
+
+## Appropriately label the data set with descriptive variable names
+
+This task was done before with the following code:
+
+```{r}
+colnames(dataset) <- Varnames$V2
+names(dataset)[562] <- "activity"
+names(dataset)[563] <- "subject"
+```
+
+## Create a second, independent tidy data set with the average of each variable for each activity and each subject
+
+Using the datasetfilt data cleaned up previously the following aggregation was run per activity and subject:
+
+```{r}
+options(warn=-1)
+tidydata <- aggregate(x = datasetfilt, by = list(datasetfilt$activity, 
+                                                 datasetfilt$subject), 
+                      FUN = "mean")
+
+```
+
+The data was exported to the file uploaded to GitHub
+
+```{r}
+write(tidydata, file="tidydata.txt", sep="\t")
+```

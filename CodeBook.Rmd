@@ -1,0 +1,173 @@
+CodeBook
+========================================================
+
+The document lists variables used within cleaned up data
+
+1       tBodyAcc-mean()-X	        double
+
+2	tBodyAcc-mean()-Y	        double
+
+3	tBodyAcc-mean()-Z	        double
+
+4	tBodyAcc-std()-X	        double
+
+5	tBodyAcc-std()-Y	        double
+
+6	tBodyAcc-std()-Z	        double
+
+7	tGravityAcc-mean()-X	        double
+
+8	tGravityAcc-mean()-Y	        double
+
+9	tGravityAcc-mean()-Z	        double
+
+10	tGravityAcc-std()-X	        double
+
+11	tGravityAcc-std()-Y	        double
+
+12	tGravityAcc-std()-Z	        double
+
+13	tBodyAccJerk-mean()-X	        double
+
+14	tBodyAccJerk-mean()-Y	        double
+
+15	tBodyAccJerk-mean()-Z	        double
+
+16	tBodyAccJerk-std()-X	        double
+
+17	tBodyAccJerk-std()-Y	        double
+
+18	tBodyAccJerk-std()-Z	        double
+
+19	tBodyGyro-mean()-X	        double
+
+20	tBodyGyro-mean()-Y	        double
+
+21	tBodyGyro-mean()-Z	        double
+
+22	tBodyGyro-std()-X	        double
+
+23	tBodyGyro-std()-Y	        double
+
+24	tBodyGyro-std()-Z	        double
+
+25	tBodyGyroJerk-mean()-X	        double
+
+26	tBodyGyroJerk-mean()-Y	        double
+
+27	tBodyGyroJerk-mean()-Z	        double
+
+28	tBodyGyroJerk-std()-X	        double
+
+29	tBodyGyroJerk-std()-Y	        double
+
+30	tBodyGyroJerk-std()-Z	        double
+
+31	tBodyAccMag-mean()	        double
+
+32	tBodyAccMag-std()	        double
+
+33	tGravityAccMag-mean()	        double
+
+34	tGravityAccMag-std()	        double
+
+35	tBodyAccJerkMag-mean()	        double
+
+36	tBodyAccJerkMag-std()	        double
+
+37	tBodyGyroMag-mean()	        double
+
+38	tBodyGyroMag-std()	        double
+
+39	tBodyGyroJerkMag-mean()	        double
+
+40	tBodyGyroJerkMag-std()	        double
+
+41	fBodyAcc-mean()-X	        double
+
+42	fBodyAcc-mean()-Y	        double
+
+43	fBodyAcc-mean()-Z	        double
+
+44	fBodyAcc-std()-X	        double
+
+45	fBodyAcc-std()-Y	        double
+
+46	fBodyAcc-std()-Z	        double
+
+47	fBodyAcc-meanFreq()-X	        double
+
+48	fBodyAcc-meanFreq()-Y	        double
+
+49	fBodyAcc-meanFreq()-Z	        double
+
+50	fBodyAccJerk-mean()-X	        double
+
+51	fBodyAccJerk-mean()-Y	        double
+
+52	fBodyAccJerk-mean()-Z	        double
+
+53	fBodyAccJerk-std()-X	        double
+
+54	fBodyAccJerk-std()-Y	        double
+
+55	fBodyAccJerk-std()-Z	        double
+
+56	fBodyAccJerk-meanFreq()-X	double
+
+57	fBodyAccJerk-meanFreq()-Y	double
+
+58	fBodyAccJerk-meanFreq()-Z	double
+
+59	fBodyGyro-mean()-X	        double
+
+60	fBodyGyro-mean()-Y	        double
+
+61	fBodyGyro-mean()-Z	        double
+
+62	fBodyGyro-std()-X	        double
+
+63	fBodyGyro-std()-Y	        double
+
+64	fBodyGyro-std()-Z	        double
+
+65	fBodyGyro-meanFreq()-X	        double
+
+66	fBodyGyro-meanFreq()-Y	        double
+
+67	fBodyGyro-meanFreq()-Z	        double
+
+68	fBodyAccMag-mean()	        double
+
+69	fBodyAccMag-std()	        double
+
+70	fBodyAccMag-meanFreq()	        double
+
+71	fBodyBodyAccJerkMag-mean()	double
+
+72	fBodyBodyAccJerkMag-std()	double
+
+73	fBodyBodyAccJerkMag-meanFreq()	double
+
+74	fBodyBodyGyroMag-mean()	        double
+
+75	fBodyBodyGyroMag-std()	        double
+
+76	fBodyBodyGyroMag-meanFreq()	double
+
+77	fBodyBodyGyroJerkMag-mean()	double
+
+78	fBodyBodyGyroJerkMag-std()	double
+
+79	fBodyBodyGyroJerkMag-meanFreq()	double
+
+80	activity	                activity code
+
+        1       WALKING
+        2	WALKING_UPSTAIRS
+        3	WALKING_DOWNSTAIRS
+        4	SITTING
+        5       STANDING
+        6	LAYING
+        
+81	subject	                        integer
